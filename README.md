@@ -3,7 +3,7 @@
 [SUBJECT](https://cdn.intra.42.fr/pdf/pdf/11413/en.subject.pdf)
 
 
-#works perfectly:
+# works perfectly:
 
 ft_memset
 
@@ -65,7 +65,7 @@ ft_strclr
 
 
 
-#works not perfectly:
+# works not perfectly:
 
 ft_memmove
 
@@ -74,7 +74,7 @@ ft_strnstr
 ft_atoi
 
 
-#TODO:
+# TODO:
 
 ft_substr
 

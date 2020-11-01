@@ -63,15 +63,21 @@ ft_strnew
 
 ft_strclr
 
-
-
-# works not perfectly:
-
 ft_memmove
 
 ft_strnstr
 
 ft_atoi
+
+ft_putchar_fd
+
+ft_putstr_fd
+
+ft_putendl_fd
+
+# works not perfectly:
+
+ft_itoa
 
 
 # TODO:
@@ -84,15 +90,7 @@ ft_strtrim
 
 ft_split
 
-ft_itoa
-
 ft_strmapi
-
-ft_putchar_fd
-
-ft_putstr_fd
-
-ft_putendl_fd
 
 ft_putnbr_fd
 

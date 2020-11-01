@@ -6,7 +6,7 @@
 /*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:28:07 by mraymun           #+#    #+#             */
-/*   Updated: 2020/10/31 18:24:33 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/01 18:21:54 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ int			ft_atoi(char *str)
 {
 	long	res;
 	int		negative;
+	int		len;
 
 	negative = 1;
 	res = 0;
+	len = 0;
 	while (*str && ft_isspace(*str))
 		str++;
 	if (*str == '-')
@@ -29,6 +31,9 @@ int			ft_atoi(char *str)
 	{
 		res = res * 10 + (*str - '0');
 		str++;
+		len++;
+		if (len > 10)
+			return (negative == -1 ? 0 : -1);
 	}
 	return (res * negative);
 }

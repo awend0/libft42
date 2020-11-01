@@ -6,7 +6,7 @@
 /*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 16:51:46 by mraymun           #+#    #+#             */
-/*   Updated: 2020/10/31 18:09:00 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/01 18:48:50 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int		ft_strlcpy(char *dst, char *src, int dstsize)
 {
 	int		srclen;
 
+	if (!dst || !src)
+		return (0);
 	srclen = ft_strlen(src);
 	if (srclen + 1 < dstsize)
 		ft_memcpy(dst, src, srclen + 1);

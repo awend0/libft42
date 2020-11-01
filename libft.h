@@ -6,13 +6,14 @@
 /*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:34:40 by mraymun           #+#    #+#             */
-/*   Updated: 2020/10/31 18:42:34 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/01 20:20:32 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_strlen(char *str);
 int		ft_toupper(int c);
@@ -30,7 +31,7 @@ int		ft_memcmp(const void *s1, const void *s2, int n);
 int		ft_strlcpy(char *dst, char *src, int dstsize);
 int		ft_strnlen(char *str, int maxlen);
 int		ft_isspace(char c);
-char 	*ft_strnstr(const char *haystack, const char *needle, int len);
+char	*ft_strnstr(const char *haystack, const char *needle, int len);
 char	*ft_strcat(char *s1, char *s2);
 char	*ft_strncat(char *s1, char *s2, int n);
 char	*ft_strcpy(char *dst, char *src);
@@ -49,4 +50,10 @@ void	*ft_memmove(void *dst, const void *src, int len);
 void	*ft_memchr(const void *s, int c, int n);
 void	ft_bzero(void *s, int n);
 void	ft_strclr(char *s);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+/*
+** todo: ft_atoi | ft_strnstr | ft_itoa malloc protection
+*/
 #endif

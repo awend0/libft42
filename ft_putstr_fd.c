@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/01 18:21:44 by mraymun           #+#    #+#             */
-/*   Updated: 2020/11/01 20:12:14 by mraymun          ###   ########.fr       */
+/*   Created: 2020/11/01 18:55:16 by mraymun           #+#    #+#             */
+/*   Updated: 2020/11/01 20:14:13 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strnstr(const char *hay, const char *needle, int slen)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int		i;
-	int		len;
-
-	if (!hay)
-		((void(*)(void))0)();
-	if (!(char)*needle)
-		return ((char *)hay);
-	len = ft_strlen((char *)needle);
-	while (slen-- >= len)
+	if (!s)
+		return ;
+	while (*s)
 	{
-		if (*hay == (char)*needle && (i = 1))
-		{
-			while (1)
-			{
-				if (i == len)
-					return ((char *)hay);
-				if (hay[i] != needle[i])
-					break ;
-				i++;
-			}
-		}
-		hay++;
+		ft_putchar_fd(*s, fd);
+		s++;
 	}
-	return (0);
 }

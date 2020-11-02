@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mraymun <mraymun@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 16:51:46 by mraymun           #+#    #+#             */
-/*   Updated: 2020/11/01 18:48:50 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/02 19:49:39 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_strlcpy(char *dst, char *src, int dstsize)
 	srclen = ft_strlen(src);
 	if (srclen + 1 < dstsize)
 		ft_memcpy(dst, src, srclen + 1);
-	else if (dstsize != 0)
+	else if (dstsize)
 	{
 		ft_memcpy(dst, src, dstsize - 1);
 		dst[dstsize - 1] = 0;

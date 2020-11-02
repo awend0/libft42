@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mraymun <mraymun@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 19:43:50 by mraymun           #+#    #+#             */
-/*   Updated: 2020/11/01 20:16:29 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/02 16:55:32 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ char		*ft_itoa(int n)
 
 	neg = (n < 0) ? 1 : 0;
 	nbr = (neg) ? n * -1 : n;
-	len = ft_nbrlen(nbr);
-	(neg) ? (s = ft_memalloc(len + 2)) :
-	(s = ft_memalloc(len + 1));
+	len = ft_nbrlen(n);
+	s = ft_strnew(len);
+	if (!s)
+		return (0);
 	s1 = s;
 	s = s + len - 2;
 	*(s1 + len - 1) = nbr % 10 + '0';
@@ -54,7 +55,5 @@ char		*ft_itoa(int n)
 		s--;
 	}
 	(neg) ? *s = '-' : (void)0;
-	(neg) ? ft_memmove(s1, s, (s1 + len + 1 - s)) :
-	ft_memmove(s1, s + 1, (s1 + len - s));
 	return (s1);
 }

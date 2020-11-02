@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+         #
+#    By: mraymun <mraymun@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/28 14:29:41 by mraymun           #+#    #+#              #
-#    Updated: 2020/10/31 14:45:43 by mraymun          ###   ########.fr        #
+#    Updated: 2020/11/02 14:33:46 by mraymun          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,16 @@ $(NAME):
 	gcc -Wall -Wextra -Werror -c $(SOURCES)
 	ar rcs $(NAME) $(OUTPUT)
 
+libft so:
+	gcc -c -fPIC $(SOURCES)
+	gcc $(OUTPUT) -shared -o $(NAME:.a=.so)
+
 clean:
 	rm -f $(OUTPUT)
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(NAME:.a=.so)
 
 re: fclean all
 

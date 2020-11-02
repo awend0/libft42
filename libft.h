@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mraymun <mraymun@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:34:40 by mraymun           #+#    #+#             */
-/*   Updated: 2020/11/01 20:20:32 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/02 17:53:19 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ char	*ft_itoa(int n);
 char	*ft_strnew(int size);
 char	*ft_strchr(char *s, int c);
 char	*ft_strrchr(char *s, int c);
+char	*ft_substr(char const *s, unsigned int start, int len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	*ft_memcpy(void *dst, const void *src, int n);
 void	*ft_memccpy(void *dst, const void *src, int c, int n);
 void	*ft_memset(void *b, int c, int len);

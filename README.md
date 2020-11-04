@@ -11,6 +11,6 @@ tests:
 
 https://github.com/alelievr/libft-unit-test
 
-![Libftest](/screenshots/Libftest?raw=true "Libftest")
+![Libftest](/screenshots/Libftest.png?raw=true "Libftest")
 
 https://github.com/jtoty/Libftest

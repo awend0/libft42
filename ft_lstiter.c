@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 16:39:48 by mraymun           #+#    #+#             */
-/*   Updated: 2020/11/04 18:53:38 by mraymun          ###   ########.fr       */
+/*   Created: 2020/11/03 19:26:05 by mraymun           #+#    #+#             */
+/*   Updated: 2020/11/03 20:04:04 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	unsigned char	*p;
-
-	p = (unsigned char *)s;
-	while (n--)
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
-		if (*p != (unsigned char)c)
-			p++;
-		else
-			return (p);
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (0);
 }

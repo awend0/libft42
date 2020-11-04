@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraymun <mraymun@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 23:56:27 by mraymun           #+#    #+#             */
-/*   Updated: 2020/10/31 12:23:57 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/04 18:57:56 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static int	ft_min(int a, int b)
 	return (b);
 }
 
-int			ft_strlcat(char *dst, char *src, int dstsize)
+size_t		ft_strlcat(char *dst, char *src, size_t dstsize)
 {
-	int		dst_len;
-	int		result_len;
+	size_t	dst_len;
+	size_t	result_len;
 
 	dst_len = ft_strlen(dst);
 	result_len = ft_min(dstsize, dst_len) + ft_strlen(src);

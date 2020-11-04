@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 16:39:48 by mraymun           #+#    #+#             */
-/*   Updated: 2020/11/04 18:53:38 by mraymun          ###   ########.fr       */
+/*   Created: 2020/11/03 19:06:25 by mraymun           #+#    #+#             */
+/*   Updated: 2020/11/03 19:10:17 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_lstsize(t_list *lst)
 {
-	unsigned char	*p;
+	int		size;
 
-	p = (unsigned char *)s;
-	while (n--)
+	if (!lst)
+		return (0);
+	size = 1;
+	while (lst->next)
 	{
-		if (*p != (unsigned char)c)
-			p++;
-		else
-			return (p);
+		lst = lst->next;
+		size++;
 	}
-	return (0);
+	return (size);
 }

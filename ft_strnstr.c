@@ -6,16 +6,16 @@
 /*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 18:21:44 by mraymun           #+#    #+#             */
-/*   Updated: 2020/11/01 20:12:14 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/04 18:59:48 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strnstr(const char *hay, const char *needle, int slen)
+char		*ft_strnstr(const char *hay, const char *needle, size_t slen)
 {
-	int		i;
-	int		len;
+	size_t	i;
+	size_t	len;
 
 	if (!hay)
 		((void(*)(void))0)();

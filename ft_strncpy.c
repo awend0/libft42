@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraymun <mraymun@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:09:24 by mraymun           #+#    #+#             */
-/*   Updated: 2020/10/31 12:23:55 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/04 18:59:29 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, char *src, int n)
+char	*ft_strncpy(char *dst, char *src, size_t n)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (src[i] && i < n)

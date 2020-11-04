@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraymun <mraymun@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 20:25:36 by mraymun           #+#    #+#             */
-/*   Updated: 2020/10/31 12:23:56 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/04 18:55:20 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, char *s2, int n)
+char	*ft_strncat(char *s1, char *s2, size_t n)
 {
 	int		i;
 

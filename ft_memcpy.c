@@ -6,13 +6,13 @@
 /*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 20:30:55 by mraymun           #+#    #+#             */
-/*   Updated: 2020/10/31 18:08:44 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/04 18:56:37 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, int n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char		*dest;
 	const char	*source;

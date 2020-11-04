@@ -3,17 +3,73 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mraymun <mraymun@student.21-school.ru>     +#+  +:+       +#+         #
+#    By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/28 14:29:41 by mraymun           #+#    #+#              #
-#    Updated: 2020/11/02 14:33:46 by mraymun          ###   ########.fr        #
+#    Updated: 2020/11/03 22:07:10 by mraymun          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SOURCES = *.c
+SOURCES =	ft_atoi.c\
+			ft_bzero.c\
+			ft_calloc.c\
+			ft_isalnum.c\
+			ft_isalpha.c\
+			ft_isascii.c\
+			ft_isdigit.c\
+			ft_isprint.c\
+			ft_isspace.c\
+			ft_itoa.c\
+			ft_memalloc.c\
+			ft_memccpy.c\
+			ft_memchr.c\
+			ft_memcmp.c\
+			ft_memcpy.c\
+			ft_memmove.c\
+			ft_memset.c\
+			ft_putchar_fd.c\
+			ft_putendl_fd.c\
+			ft_putnbr_fd.c\
+			ft_putstr_fd.c\
+			ft_split.c\
+			ft_strcat.c\
+			ft_strchr.c\
+			ft_strclr.c\
+			ft_strcmp.c\
+			ft_strcpy.c\
+			ft_strdup.c\
+			ft_strjoin.c\
+			ft_strlcat.c\
+			ft_strlcpy.c\
+			ft_strlen.c\
+			ft_strmapi.c\
+			ft_strncat.c\
+			ft_strncmp.c\
+			ft_strncpy.c\
+			ft_strnew.c\
+			ft_strnlen.c\
+			ft_strnstr.c\
+			ft_strrchr.c\
+			ft_strtrim.c\
+			ft_substr.c\
+			ft_tolower.c\
+			ft_toupper.c
+
+BONUS_SRC =	ft_lstadd_back.c\
+			ft_lstadd_front.c\
+			ft_lstclear.c\
+			ft_lstdelone.c\
+			ft_lstiter.c\
+			ft_lstlast.c\
+			ft_lstmap.c\
+			ft_lstnew.c\
+			ft_lstsize.c
+
 OUTPUT = $(SOURCES:.c=.o)
+
+BONUS_OUTPUT = $(BONUS_SRC:.c=.o)
 
 all: $(NAME)
 
@@ -21,16 +77,15 @@ $(NAME):
 	gcc -Wall -Wextra -Werror -c $(SOURCES)
 	ar rcs $(NAME) $(OUTPUT)
 
-libft so:
-	gcc -c -fPIC $(SOURCES)
-	gcc $(OUTPUT) -shared -o $(NAME:.a=.so)
+bonus:
+	gcc -Wall -Wextra -Werror -c $(SOURCES) $(BONUS_SRC)
+	ar rcs $(NAME) $(OUTPUT) $(BONUS_OUTPUT)
 
 clean:
-	rm -f $(OUTPUT)
+	rm -f $(OUTPUT) $(BONUS_OUTPUT)
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f $(NAME:.a=.so)
 
 re: fclean all
 
@@ -59,7 +114,7 @@ coffee:
 	@echo "     '._     """----.....______.....----"""         _.'"
 	@echo '         ""--..,,_____            _____,,..--"""'''
 	@echo '                      """------"""'
-	@sleep 1
+	@sleep 0.3
 	@clear
 	@echo ""
 	@echo "                 ("
@@ -84,7 +139,7 @@ coffee:
 	@echo "     '._     """----.....______.....----"""         _.'"
 	@echo '         ""--..,,_____            _____,,..--"""'''
 	@echo '                      """------"""'
-	@sleep 1
+	@sleep 0.3
 	@clear
 	@echo ""
 	@echo "               ("
@@ -109,7 +164,7 @@ coffee:
 	@echo "     '._     """----.....______.....----"""         _.'"
 	@echo '         ""--..,,_____            _____,,..--"""'''
 	@echo '                      """------"""'
-	@sleep 1
+	@sleep 0.3
 	@clear
 	@echo ""
 	@echo "             (         ) "

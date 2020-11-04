@@ -6,13 +6,13 @@
 /*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 17:26:23 by mraymun           #+#    #+#             */
-/*   Updated: 2020/10/31 14:53:50 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/04 18:57:14 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, int len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*ptr;
 	unsigned char	sym;

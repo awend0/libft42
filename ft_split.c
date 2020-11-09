@@ -6,7 +6,7 @@
 /*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:43:44 by mraymun           #+#    #+#             */
-/*   Updated: 2020/11/04 18:47:20 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/04 21:00:00 by mraymun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 static int		ft_countwords(char const *s, char c)
 {
 	int		i;
-	int		words;
+	int		w;
 
-	words = 0;
+	w = 0;
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
-			words++;
+			w++;
 		i++;
 	}
-	return (words);
+	return (w);
 }
 
 static int		ft_wordlen(char const *s, char c)
@@ -43,53 +43,54 @@ static int		ft_wordlen(char const *s, char c)
 	return (len);
 }
 
-static void		*ft_leakprotect(char **splitted, int words)
+static void		*ft_leakprotect(char **ret, int w)
 {
 	int	i;
 
 	i = 0;
-	while (i < words)
+	while (i < w)
 	{
-		free(splitted[i]);
+		free(ret[i]);
 		i++;
 	}
-	free(splitted);
+	free(ret);
 	return (0);
 }
 
-static char		**ft_fill(char const *s, int words, char c, char **splitted)
+static char		**ft_fill(char const *s, int w, char c, char **ret)
 {
 	int		i;
 	int		j;
 	int		len;
 
-	i = -1;
-	while (++i < words)
+	i = 0;
+	while (i < w)
 	{
 		while (*s == c)
 			s++;
 		len = ft_wordlen(s, c);
-		if (!(splitted[i] = (char *)malloc(sizeof(char) * (len + 1))))
-			return (ft_leakprotect(splitted, i));
+		if (!(ret[i] = (char *)malloc(sizeof(char) * (len + 1))))
+			return (ft_leakprotect(ret, i));
 		j = 0;
 		while (j < len)
-			splitted[i][j++] = *s++;
-		splitted[i][j] = '\0';
+			ret[i][j++] = *s++;
+		ret[i][j] = '\0';
+		i++;
 	}
-	splitted[i] = 0;
-	return (splitted);
+	ret[i] = 0;
+	return (ret);
 }
 
 char			**ft_split(char	const *s, char c)
 {
-	char	**splitted;
-	int		words;
+	char	**ret;
+	int		w;
 
 	if (!s)
 		return (0);
-	words = ft_countwords(s, c);
-	if (!(splitted = (char **)malloc(sizeof(char *) * (words + 1))))
+	w = ft_countwords(s, c);
+	if (!(ret = (char **)malloc(sizeof(char *) * (w + 1))))
 		return (0);
-	splitted = ft_fill(s, words, c, splitted);
-	return (splitted);
+	ret = ft_fill(s, w, c, ret);
+	return (ret);
 }
